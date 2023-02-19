@@ -5,7 +5,7 @@ let schema = new mongoose.Schema({
   title: String,
   summary: String,
   rating: Number,
-  genere: String,
+  genre: String,
   user_id: String,
   date_created: String,
 });
@@ -17,7 +17,7 @@ exports.validateJoi = (_reqBody) => {
     title: Joi.string().min(2).max(150).required(),
     summary: Joi.string().min(2).max(150).required(),
     rating: Joi.number().min(1).max(9999).required(),
-    genere: Joi.string().min(2).max(150).required(),
+    genre: Joi.string().min(2).max(150).required(),
   });
   return joiSchema.validate(_reqBody);
 };

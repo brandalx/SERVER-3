@@ -1,5 +1,5 @@
 const express = require("express");
-const { MovieModel } = require("../models/movieModel");
+const { MovieModel, validateJoi } = require("../models/movieModel");
 const router = express.Router();
 router.get("/", async (req, res) => {
   //pegenation variabels
@@ -47,6 +47,21 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", auth, async (req, res) => {});
+router.post("/", async (req, res) => {
+  let validBody = validateJoi(req.body);
+  if (validBody.error) {
+    return res.status(400).json(validBody.error.details);
+  }
+  try {
+    let movie = new MovieModel(req.body);
+    movie.user_id = "test id";
+    // user_id:req.tokenData._id -> The user will only be able to edit records he added
+    await movie.save();
+    return res.json(movie);
+  } catch (err) {
+    console.log(err);
+    res.status(502).json({ err });
+  }
+});
 
 module.exports = router;
