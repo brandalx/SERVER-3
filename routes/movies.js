@@ -1,5 +1,4 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
 const { MovieModel } = require("../models/movieModel");
 const router = express.Router();
 router.get("/", async (req, res) => {
