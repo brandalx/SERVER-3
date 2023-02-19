@@ -54,10 +54,31 @@ router.post("/", async (req, res) => {
   }
   try {
     let movie = new MovieModel(req.body);
-    movie.user_id = "test id";
-    // user_id:req.tokenData._id -> The user will only be able to edit records he added
+    movie.user_id = "test id"; //will be token here
+
     await movie.save();
     return res.json(movie);
+  } catch (err) {
+    console.log(err);
+    res.status(502).json({ err });
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  let validBody = validateJoi(req.body);
+  if (validBody.error) {
+    return res.status(400).json(validBody.error.details);
+  }
+  try {
+    let id = req.params.id;
+    let data = await MovieModel.updateOne(
+      {
+        _id: id,
+        user_id: "test id", //TODO: TOKEN user_id:req.tokenData._id -> The user will only be able to edit records he added
+      },
+      req.body
+    );
+    // if succ wil display modfiedCount 1
   } catch (err) {
     console.log(err);
     res.status(502).json({ err });
