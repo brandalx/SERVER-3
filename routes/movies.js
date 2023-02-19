@@ -85,4 +85,22 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  // we will try to delete and makes check only users adds and not all the others.
+  //we will filter by user id
+  try {
+    let id = req.params.id;
+    let data = await CoffeeModel.deleteOne({
+      _id: id,
+      user_id: "test id",
+    }); //now wit help of user_id: req.tokenData._id, we will delete only something whats only user created
+
+    // deletedCount if successful we will get 1
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+    res.status(502).json({ err });
+  }
+});
+
 module.exports = router;
