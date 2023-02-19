@@ -47,14 +47,14 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   let validBody = validateJoi(req.body);
   if (validBody.error) {
     return res.status(400).json(validBody.error.details);
   }
   try {
     let movie = new MovieModel(req.body);
-    movie.user_id = "test id"; //will be token here
+    movie.user_id = req.tokenData._id; //will be token here
 
     await movie.save();
     return res.json(movie);
@@ -64,7 +64,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   let validBody = validateJoi(req.body);
   if (validBody.error) {
     return res.status(400).json(validBody.error.details);
@@ -74,7 +74,7 @@ router.put("/:id", async (req, res) => {
     let data = await MovieModel.updateOne(
       {
         _id: id,
-        user_id: "test id", //TODO: TOKEN user_id:req.tokenData._id -> The user will only be able to edit records he added
+        user_id: req.tokenData._id, //TODO: TOKEN user_id:req.tokenData._id -> The user will only be able to edit records he added
       },
       req.body
     );
@@ -85,14 +85,14 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   // we will try to delete and makes check only users adds and not all the others.
   //we will filter by user id
   try {
     let id = req.params.id;
     let data = await CoffeeModel.deleteOne({
       _id: id,
-      user_id: "test id",
+      user_id: req.tokenData._id,
     }); //now wit help of user_id: req.tokenData._id, we will delete only something whats only user created
 
     // deletedCount if successful we will get 1
