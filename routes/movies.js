@@ -7,14 +7,35 @@ router.get("/", async (req, res) => {
   let page = req.query.page - 1 || 0;
   let sort = req.query.sort || "name";
   let desc = req.query.desc == "yes" ? 1 : -1;
+  let querySearch = req.query.search;
+  let searchExpression;
+
+  if (querySearch) {
+    searchExpression = new RegExp(querySearch, "i");
+  }
 
   try {
-    let data = await MovieModel.find({})
-      .limit(perPage)
-      .skip(page * perPage)
-      .sort({ [sort]: desc });
-    if (data.length == 0) {
-      return res.json({ msg: "No such page" });
+    let data;
+
+    if (querySearch) {
+      data = await MovieModel.find({
+        $or: [
+          { title: searchExpression },
+          { summary: searchExpression },
+          { genre: searchExpression },
+        ],
+      })
+        .sort({ [sort]: desc })
+        .skip(page * perPage)
+        .limit(perPage);
+    } else {
+      data = await MovieModel.find({})
+        .limit(perPage)
+        .skip(page * perPage)
+        .sort({ [sort]: desc });
+      if (data.length == 0) {
+        return res.json({ msg: "No such page" });
+      }
     }
     res.json(data);
   } catch (err) {
