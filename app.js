@@ -11,8 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "public")));
 routesInit(app);
+app.use(express.static(path.join(__dirname, "public")));
 
 const server = http.createServer(app);
 let port = process.env.PORT || 3003;

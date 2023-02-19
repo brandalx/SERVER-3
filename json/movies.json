@@ -1,0 +1,122 @@
+[
+  {
+    "title": "The Godfather",
+    "summary": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "rating": 9.2,
+    "genre": "Crime"
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "rating": 9.3,
+    "genre": "Drama"
+  },
+  {
+    "title": "The Dark Knight",
+    "summary": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+    "rating": 9.0,
+    "genre": "Action"
+  },
+  {
+    "title": "Pulp Fiction",
+    "summary": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "rating": 8.9,
+    "genre": "Crime"
+  },
+  {
+    "title": "Forrest Gump",
+    "summary": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate, and other historical events unfold through the perspective of an Alabama man with an IQ of 75.",
+    "rating": 8.8,
+    "genre": "Drama"
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "summary": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+    "rating": 8.8,
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Matrix",
+    "summary": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "rating": 8.7,
+    "genre": "Action"
+  },
+  {
+    "title": "Inception",
+    "summary": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "rating": 8.8,
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "Star Wars: Episode V - The Empire Strikes Back",
+    "summary": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader.",
+    "rating": 8.7,
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "Fight Club",
+    "summary": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
+    "rating": 8.8,
+    "genre": "Drama"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "summary": "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.",
+    "rating": 8.6,
+    "genre": "Thriller"
+  },
+  {
+    "title": "Goodfellas",
+    "summary": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
+    "rating": 8.7,
+    "genre": "Crime"
+  },
+  {
+    "title": "The Usual Suspects",
+    "summary": "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup.",
+    "rating": 8.5,
+    "genre": "Crime"
+  },
+  {
+    "title": "Jurassic Park",
+    "summary": "A pragmatic paleontologist visiting an almost complete theme park is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.",
+    "rating": 8.1,
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "The Departed",
+    "summary": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.",
+    "rating": 8.5,
+    "genre": "Crime"
+  },
+  {
+    "title": "Back to the Future",
+    "summary": "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.",
+    "rating": 8.5,
+    "genre": "Sci-Fi"
+  },
+  {
+    "title": "The Prestige",
+    "summary": "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+    "rating": 8.5,
+    "genre": "Drama"
+  },
+  {
+    "title": "Gone Girl",
+    "summary": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
+    "rating": 8.1,
+    "genre": "Thriller"
+  },
+  {
+    "title": "The Social Network",
+    "summary": "As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea, and by the co-founder who was later squeezed out of the business.",
+    "rating": 7.7,
+    "genre": "Drama"
+  },
+  {
+    "title": "Die Hard",
+    "summary": "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+    "rating": 8.2,
+    "genre": "Action"
+  }
+]
