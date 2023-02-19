@@ -16,7 +16,8 @@ router.get("/", async (req, res) => {
 
   try {
     let data;
-
+    // query example for search:
+    // http://localhost:3003/movies?search=computer
     if (querySearch) {
       data = await MovieModel.find({
         $or: [
@@ -29,6 +30,8 @@ router.get("/", async (req, res) => {
         .skip(page * perPage)
         .limit(perPage);
     } else {
+      // example for pegenation
+      // http://localhost:3003/movies?search=a&sort=title&page=1&desc=1
       data = await MovieModel.find({})
         .limit(perPage)
         .skip(page * perPage)
@@ -43,4 +46,7 @@ router.get("/", async (req, res) => {
     res.status(502).json({ err });
   }
 });
+
+router.post("/", auth, async (req, res) => {});
+
 module.exports = router;
