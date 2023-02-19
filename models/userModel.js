@@ -12,3 +12,17 @@ let schema = new mongoose.Schema({
   },
 });
 exports.UserModel = mongoose.model("users", schema);
+
+exports.createToken = (user_id) => {
+  let token = jwt.sign({ _id: user_id }, "secret", { expiresIn: "60mins" });
+  return token;
+};
+
+exports.validateJoi = (_reqBody) => {
+  let joiSchema = Joi.object({
+    name: Joi.string().min(2).max(200).required(),
+    email: Joi.string().min(1).max(300).email().required(),
+    password: Joi.string().min(1).max(100).required(),
+  });
+  return joiSchema.validate(_reqBody);
+};
