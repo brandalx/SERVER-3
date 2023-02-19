@@ -10,4 +10,4 @@ let schema = new mongoose.Schema({
   date_created: String,
 });
 
-exports.movieModel = mongoose.modell("movies", schema);
+exports.MovieModel = mongoose.model("movies", schema);
