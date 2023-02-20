@@ -95,7 +95,11 @@ router.delete("/:id", auth, async (req, res) => {
       _id: id,
       user_id: req.tokenData._id,
     }); //now wit help of user_id: req.tokenData._id, we will delete only something whats only user created
-
+    if (data.deletedCount == 0) {
+      return res.json({
+        msg: "It seems you dont have acess to remove this data",
+      });
+    }
     // deletedCount if successful we will get 1
     res.json(data);
   } catch (err) {
