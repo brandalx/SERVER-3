@@ -46,6 +46,11 @@ router.post("/", async (req, res) => {
     user.password = generateRandomStars;
     res.status(201).json(user);
   } catch (err) {
+    if (err.code == 11000) {
+      return res
+        .status(400)
+        .json({ msg: "Email you provided already in the system", code: 11000 });
+    }
     console.log(err);
     res.status(502).json({ err });
   }
