@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <title>Movies list</title>
+    <script type="module" defer src="js/appFoods.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>This is client side</h1>
+    <div class="container">
+      <h1>Movies list:</h1>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Rating</th>
+            <th>Genere</th>
+          </tr>
+        </thead>
+        <tbody id="id_parent"></tbody>
+      </table>
+    </div>
   </body>
 </html>
