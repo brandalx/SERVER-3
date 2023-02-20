@@ -5,7 +5,9 @@ exports.auth = (req, res, next) => {
   if (!token) {
     return res
       .status(401)
-      .json({ err: "You should send token to this endpoint" });
+      .json({
+        err: "You not autorised to do such action / no token was found",
+      });
   }
   try {
     // tries to decode the token and get its payload, which is currently an ID
