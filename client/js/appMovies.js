@@ -45,10 +45,20 @@ search.addEventListener("submit", (e) => {
 });
 
 const doApiSearch = async (query) => {
-  let url = `http://localhost:3003/movies?search=${query}`;
-  let resp = await axios.get(url);
-  console.log(resp.data);
-  createList(resp.data);
+  try {
+    let url = `http://localhost:3003/movies?search=${query}`;
+    let resp = await axios.get(url);
+    let final = resp.data;
+    if (final.length == 0) {
+      let mainAppender = document.querySelector("#id_parent");
+      mainAppender.innerHTML = `It seems we didnt find anything for your search '${query}'`;
+    } else {
+      createList(final);
+    }
+  } catch (err) {
+    console.log(err);
+    alert("There problem, come back later");
+  }
 };
 
 const deleteFrom = () => {
