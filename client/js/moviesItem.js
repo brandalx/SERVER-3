@@ -16,7 +16,7 @@ export default class MoviesItem {
         <td>${this.summary} nis</td>
         <td>${this.rating}</td>
         <td>${this.genere}</td>
-        <td><button class="btn btn-danger">X</button></td>
+        <td><button class="btn btn-danger btndelete">X</button></td>
         `;
   }
 }
