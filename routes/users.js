@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { auth } = require("../middlewares/auth");
 const {
   UserModel,
   createToken,
@@ -18,7 +19,7 @@ function generateRandomStars() {
   return "*".repeat(numStars);
 }
 
-router.get("/userInfo", async (req, res) => {
+router.get("/userInfo", auth, async (req, res) => {
   try {
     let user = await UserModel.findOne(
       {

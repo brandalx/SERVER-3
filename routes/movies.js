@@ -1,6 +1,7 @@
 const express = require("express");
 const { MovieModel, validateJoi } = require("../models/movieModel");
 const router = express.Router();
+const { auth } = require("../middlewares/auth");
 router.get("/", async (req, res) => {
   //pegenation variabels
   let perPage = 5;
