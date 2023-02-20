@@ -91,7 +91,7 @@ router.delete("/:id", auth, async (req, res) => {
   //we will filter by user id
   try {
     let id = req.params.id;
-    let data = await CoffeeModel.deleteOne({
+    let data = await MovieModel.deleteOne({
       _id: id,
       user_id: req.tokenData._id,
     }); //now wit help of user_id: req.tokenData._id, we will delete only something whats only user created
