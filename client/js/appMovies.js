@@ -1,4 +1,4 @@
-import MoviesItem from "./moviesItem";
+import MoviesItem from "./moviesItem.js";
 
 const init = () => {
   doApi();
@@ -13,7 +13,7 @@ const doApi = async () => {
 
 const createList = (_ar) => {
   _ar.forEach((item, i) => {
-    let movies = new MoviesItem("#id_parent", item, i);
+    let movies = new MoviesItem(item, i);
     movies.render();
   });
 };
